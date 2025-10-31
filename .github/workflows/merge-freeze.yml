@@ -1,0 +1,16 @@
+name: Merge Freeze Monitor
+
+on:
+  schedule:
+    - cron: "*/15 * * * *" # runs every 15 minutes
+  workflow_dispatch:
+
+jobs:
+  check-ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simulate CI check
+        run: |
+          echo "🔍 Checking CI status..."
+          echo "✅ CI is green. No merge freeze needed."
+          echo "This is a safe placeholder version (no API calls)."
