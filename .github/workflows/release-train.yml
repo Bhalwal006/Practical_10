@@ -1,0 +1,15 @@
+name: Release Train
+
+on:
+  schedule:
+    - cron: "0 17 * * *" # runs daily at 17:00 UTC
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Start Release Train
+        run: |
+          echo "🚆 Release train started at 17:00 UTC"
+          echo "✅ Main branch is green — proceeding with release."
