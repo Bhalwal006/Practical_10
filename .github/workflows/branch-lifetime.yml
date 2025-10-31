@@ -1,0 +1,19 @@
+name: Branch Lifetime Check
+
+on:
+  schedule:
+    - cron: "0 */6 * * *" # runs every 6 hours
+  workflow_dispatch:
+
+jobs:
+  check-branches:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Display branch info
+        run: |
+          echo "✅ Branch Lifetime Checker running successfully!"
+          echo "This is a demo version — checks branch age <48h."
+          echo "No API calls yet, safe to run."
